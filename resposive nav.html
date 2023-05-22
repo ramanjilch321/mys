@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESPONSIVE</title>
+    <meta http-equiv="refresh" content="1">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            
+        }
+        .parent{
+            color: aliceblue;
+            display: flex;
+            /* border: 1px solid green; */
+            width: 100%;
+            height: auto;
+            box-shadow: 0 2px 10px black;
+            background-color: rgb(3, 104, 104);
+        }
+        .child1{
+            padding: 20px 50px;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+        img{
+           display: none;
+        }
+        #child2{
+            /* border: 1px solid ; */
+            width: 90%;
+            display: flex;
+            justify-content: end;
+            padding: 10px;
+        }
+        #child2 a{
+                text-decoration: none;
+                color: inherit;
+            }
+        .grandchild{
+            border-radius: 8px;
+            margin: 10px;
+            padding: 7px 7px;
+            font-weight: bold;
+            
+            border: 1px solid ;
+            box-shadow: 5px 5px 10px black;
+        }
+        .content{
+            min-height: 470px;
+        }
+        .footer{
+            background-color:rgb(3, 104, 104);
+            height: 30px ;
+            color: white;
+            text-align: center;
+            padding-top: 5px;
+            box-shadow: 0 -3px 10px black;
+           
+        }
+
+
+        @media (max-width:600px)  {
+            .child1{
+                margin-left: 100px;
+            }
+            #child2{
+                display: none;
+            }
+            #child2.child2{
+                background-color:rgb(3, 104, 104);
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                /* border: 1px solid black; */
+                text-align: center;
+                border-radius: 8px;
+            }
+            #child2 a{
+                text-decoration: none;
+                color: inherit;
+            }
+            img{
+            display: block;
+            margin: 20px ;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child1">Ramanjan</div>
+        <a href="#" id="rep_menu"><img src="menu.png" alt="" ></a>
+        
+        <div id="child2" class="">
+            <a href="#"><div class="grandchild">HOME</div></a>
+            <a href="#"><div class="grandchild">PRODUCTS</div></a>
+            <a href="#"><div class="grandchild">ABOUT US</div></a>
+            <a href="#"><div class="grandchild">CONTACT US</div></a>
+        </div>
+
+    </div>
+    <div class="content"></div>
+    <div class="footer">© copyright 2023 | all rights reserved | Design and managed by Ramanjan</div>
+
+
+
+
+   
+    <script>
+        let menu = document.getElementById("rep_menu")
+        
+        let nav = document.getElementById("child2")
+        console.log(nav)
+        menu.onclick = function(){
+            nav.classList.add("child2")
+            setTimeout(() => {
+                nav.classList.remove("child2")
+
+                
+            }, 3000);
+
+
+        }
+        
+
+        
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
